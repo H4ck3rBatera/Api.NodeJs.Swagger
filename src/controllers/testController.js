@@ -1,19 +1,21 @@
-const UserModel = require("../models/testModel");
-
 module.exports = {
   async details(req, res) {
-    res.json("details");
+    const { id } = req.params;
+    res.json(id);
   },
   async index(req, res) {
     res.json("index");
   },
   async create(req, res) {
-    res.json("create");
+    const { name, email, password } = req.body;
+    res.json({ name, email, password });
   },
   async delete(req, res) {
-    res.json("delete");
+    const { id } = req.params;
+    res.json(id);
   },
   async update(req, res) {
-    res.json("update");
+    const { id, name, email, password } = req.body;
+    res.json({ id, name, email, password });
   },
 };
